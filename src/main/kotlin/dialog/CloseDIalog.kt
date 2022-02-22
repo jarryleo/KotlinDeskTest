@@ -1,12 +1,14 @@
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.window.Dialog
 import androidx.compose.material.Text
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.graphics.Color
+import theme.Purple200
 
 /**
  * 退出程序确认弹框
@@ -19,15 +21,14 @@ fun AskToCloseDialog(
 ) {
     Dialog(
         onCloseRequest = { isAskingToClose.value = false },
-        title = "退出确认",
+        title = "退出",
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.SpaceEvenly
         ) {
             Text("确认退出app吗？")
-            Spacer(modifier = Modifier.height(40.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
@@ -38,12 +39,12 @@ fun AskToCloseDialog(
                     Text("Yes")
                 }
                 Button(
+                    colors = ButtonDefaults.buttonColors(Purple200, Color.White),
                     onClick = { isAskingToClose.value = false }
                 ) {
                     Text("No")
                 }
             }
-
         }
     }
 }
