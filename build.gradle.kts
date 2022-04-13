@@ -11,9 +11,9 @@ group = "me.ll"
 version = "1.0"
 
 repositories {
-    maven("https://maven.aliyun.com/repository/public")
     google()
     mavenCentral()
+    maven("https://maven.aliyun.com/repository/public")
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
@@ -22,7 +22,7 @@ dependencies {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 compose.desktop {

@@ -3,6 +3,7 @@ import AskToCloseDialog
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.WindowState
@@ -15,6 +16,7 @@ fun main() = application {
         Window(
             onCloseRequest = { isAskingToClose.value = true },
             title = "我的第一个kotlin桌面程序",
+            icon = painterResource("ic_launcher.png"),
             state = WindowState(position = WindowPosition(Alignment.Center))
         ) {
             App()
